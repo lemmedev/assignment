@@ -1,0 +1,22 @@
+<div *ngIf="article">
+  <div class="card" style="width: 18rem;">
+
+    <img alt="img" class="bd-placeholder-img card-img-top" width="100%" height="180" onError="this.src = 'assets/error.jpg'" [src]="article.urlToImage" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" role="img">
+
+
+    <div class="card-body">
+      <h5 class="card-title">{{article.title}}</h5>
+      <p class="card-text">{{article.description}}</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Source: {{article.source.name}}</li>
+      <li class="list-group-item">PublishedAt: {{article.publishedAt | date}}</li>
+      <li class="list-group-item"> Author: {{article.author}} </li>
+    </ul>
+    <div class="card-body">
+
+      <a href="{{article.url}}" target="_blank" class="card-link">Read complete article</a>
+    </div>
+  </div>
+  <br><br>
+</div>

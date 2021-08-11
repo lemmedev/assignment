@@ -1,0 +1,25 @@
+<div *ngFor="let item of articleLists">
+  <div class="card" style="width: 18rem;" (click)="onClick(item)">
+
+    <img alt="img" class="bd-placeholder-img card-img-top" width="100%" height="180" onError="this.src = 'assets/error.jpg'" [src]="item.urlToImage" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" role="img">
+
+
+    <div class="card-body">
+      <h5 class="card-title">{{item.title}}</h5>
+      <p class="card-text">{{item.description}}</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Source: {{item.source.name}}</li>
+      <li class="list-group-item">PublishedAt: {{item.publishedAt | date}}</li>
+      <li class="list-group-item"> Author: {{item.author}} </li>
+    </ul>
+    <div class="card-body">
+
+
+      <a href="{{item.url}}" target="_blank" class="card-link">Read complete article</a>
+    </div>
+  </div>
+  <br><br>
+</div>
+
+<router-outlet></router-outlet>
